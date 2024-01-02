@@ -1,0 +1,18 @@
+
+<div class="main-box">
+    <div class="register-form">
+        <div class="text">
+            <span>Welcome</span>
+            <span>Create new account</span>
+        </div>
+        <div class="register-inputs">
+            <input type="text" [(ngModel)]="name" class="inp1" placeholder="Name">
+            <input type="text"  [(ngModel)]="lastName"placeholder="Lastname">
+            <input type="email" [(ngModel)]="email"  placeholder="Email">
+            <input type="password" [(ngModel)]="password" class="inp2" placeholder="Password">
+        </div>
+        <div class="btn">
+            <button (click)="register()" >Sign in</button>
+        </div>
+    </div>
+</div>
