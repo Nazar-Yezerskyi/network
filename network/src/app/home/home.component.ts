@@ -88,34 +88,7 @@ export class HomeComponent implements OnInit{
 
 
     
-      this.name.subscribe(name => {
-        console.log(name);})  
-        this.userId.subscribe(userId => {
-          console.log('User ID:', userId);
-    
-          // Підписка на зміни в колекції "posts"
-          this.fireStore.collection('post').valueChanges().subscribe((posts: any[]) => {
-            console.log('All Posts:', posts);
-    
-            // Фільтрація постів за ідентифікатором користувача
-            this.posts = posts
-            this.userId.subscribe(userId => {
-              this.fireStore.collection('post').valueChanges().subscribe((posts: any[]) => {
-                this.posts = posts.filter(post => post.id === userId);
-            
-                // Sort posts by timestamp in descending order (latest first)
-                this.posts.sort((a, b) => {
-                  const timestampA = a.date ? a.date.seconds : 0; // Assuming your timestamp field is 'date'
-                  const timestampB = b.date ? b.date.seconds : 0;
-                  return timestampB - timestampA;
-                });
-                                               
-                console.log('User Posts:', this.posts);
-              });
-            });
-            console.log('User Posts:', this.posts);
-          });
-        });
+     
     
         // Підписка на ім'я
         this.name.subscribe(name => {
@@ -184,7 +157,7 @@ export class HomeComponent implements OnInit{
   }
   onFileSelected(event: any): void {
     const file: File = event.target.files[0];
-    const path = `profile_photo/${file.name}`;
+    const path = `own_gallery/${file.name}`;
     const ref = this.storage.ref(path);
     
     // Отримати ідентифікатор поточного користувача, який ввійшов в систему
@@ -205,7 +178,11 @@ export class HomeComponent implements OnInit{
       task.then(snapshot => {
         console.log('File uploaded successfully!');
       });
+
+      
     });
+    
+    
     
   }
 }

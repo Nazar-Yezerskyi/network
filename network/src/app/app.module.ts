@@ -10,6 +10,8 @@ import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { LoginService } from './login.service';
 import { HomeComponent } from './home/home.component';
+import { GalleryComponent } from './gallery/gallery.component';
+import { PostComponent } from './post/post.component';
 
 
 
@@ -32,6 +34,8 @@ const firebaseConfig = {
     RegisterComponent,
     LoginComponent,
     HomeComponent,
+    GalleryComponent,
+    PostComponent,
  
   ],
   imports: [

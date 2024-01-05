@@ -1,4 +1,5 @@
 <div class="main-box">
+    <div class="box">
     <div class="profile">
         <div class="user-info">
             <div class="img" *ngFor="let photo of photos">
@@ -9,6 +10,7 @@
             </div>
         </div>
     </div>
+    
     <div class="navigation">
         <div class="panel">
             
@@ -17,35 +19,22 @@
             <a href="">Chat</a>
             <a href="">Friends</a>
             <a href="">logout</a>
-            <input type="file" (change)="onFileSelected($event)" />
-
+            <input type="file" /> 
+            <input type="file" (change)="onFileSelected($event)"/> 
+            
         </div>
     </div>
-
-    <div class="posts-container" >
-
-        <div class="post"*ngFor="let post of posts">
-            
-            <div class="post_info" >
-                
-                <div class="user-detail" >
-            
-                    <span>{{ name |async }}</span>
-                </div>
-                <div class="post-title">
-                    <span>{{post.title}}</span>
-                </div>
-                
-                <div class="post-text">
-                    <span>{{post.text}}</span>
-                </div>
-            </div>
-            <button [id]="post.postId" (click)="deletePost(post.postId)">Delete</button>
-        </div>
     </div>
+
+    <app-post></app-post>
+<app-gallery></app-gallery>
+
+    
     
     
 </div>
+
+
 <div *ngIf="showModal" class="modal-overlay">
     <div class="modal">
       <span (click)="closeModal()" class="close-btn">&times;</span>

@@ -1,0 +1,24 @@
+.post{
+    position: relative;
+    width: 500px;
+    height: auto;
+    background-color: #6d8d8b;
+    margin-left: 300px;
+    margin-bottom: 5px;
+    padding: 15px;
+    border-radius: 10px;
+
+
+
+}
+.posts-container{
+    width: 850px;
+    height: 100vh; 
+    
+
+}
+.post_info{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
